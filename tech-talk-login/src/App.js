@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Particles from 'react-particles-js';
 
+
+const particleOpt = {
+  
+   particles:{
+      number:{
+        value:175,
+        density:{
+           enable:true,
+           value_area:800
+        }
+      },
+      size: {
+        value: 1, 
+        random: true,
+        anim: {
+          enable: true,
+          speed: 50,
+          size_min: 1,
+          sync: true
+        }
+      },
+      type: ["edge"],
+      detect_on: "canvas"
+      
+   }
+}
 class App extends Component {
 
   /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
@@ -52,16 +78,20 @@ document.querySelector('.cont_form_login').style.display = "none";
 
   render() {
     return (
-      <div class="cotn_principal">
-<div class="cont_centrar">
+      <div>
+        
+
+      <div>
+          <div class="cont_centrar">
 
   <div class="cont_login">
+
 <div class="cont_info_log_sign_up">
       <div class="col_md_login">
 <div class="cont_ba_opcitiy">
         
         <h2>LOGIN</h2>  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+  <p></p> 
   <button class="btn_login" onClick={this.cambiar_login}>LOGIN</button>
   </div>
   </div>
@@ -70,7 +100,7 @@ document.querySelector('.cont_form_login').style.display = "none";
   <h2>SIGN UP</h2>
 
   
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p></p>
 
   <button class="btn_sign_up" onClick={this.cambiar_sign_up}>SIGN UP</button>
 </div>
@@ -78,18 +108,13 @@ document.querySelector('.cont_form_login').style.display = "none";
        </div>
 
     
-    <div class="cont_back_info">
-       <div class="cont_img_back_grey">
-       <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
-       </div>
-       
-    </div>
+  
 <div class="cont_forms" >
     <div class="cont_img_back_">
        <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
        </div>
  <div class="cont_form_login">
-<a href="#" onClick={this.ocultar_login_sign_up} ><i class="material-icons">&#xE5C4;</i></a>
+<a href="#" onClick={this.ocultar_login_sign_up} ><i class="material-icons">x</i></a>
    <h2>LOGIN</h2>
  <input type="text" placeholder="Email" />
 <input type="password" placeholder="Password" />
@@ -97,7 +122,7 @@ document.querySelector('.cont_form_login').style.display = "none";
   </div>
   
    <div class="cont_form_sign_up">
-<a href="#" onClick={this.ocultar_login_sign_up}><i class="material-icons">&#xE5C4;</i></a>
+<a href="#" onClick={this.ocultar_login_sign_up}><i class="material-icons">x</i></a>
      <h2>SIGN UP</h2>
 <input type="text" placeholder="Email" />
 <input type="text" placeholder="User" />
@@ -112,6 +137,11 @@ document.querySelector('.cont_form_login').style.display = "none";
   </div>
  </div>
 </div>
+        <Particles
+         params={particleOpt}
+      >
+      </Particles>
+      </div>
     );
   }
 }
